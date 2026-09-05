@@ -43,6 +43,12 @@ button,input,select{font-family:inherit;font-size:inherit;color:inherit}
 }
 .hd-txt{min-width:0;flex:1}
 .hd-t{font-size:15px;font-weight:700;line-height:1.25;overflow-wrap:anywhere}
+.live{display:inline-flex;align-items:center;gap:4px;margin-left:7px;padding:2px 8px;
+  border-radius:999px;background:#c62828;color:#fff;font-size:10.5px;font-weight:800;
+  vertical-align:middle;white-space:nowrap}
+.live i{width:6px;height:6px;border-radius:50%;background:#fff;animation:lv 1.6s ease-in-out infinite}
+@keyframes lv{0%,100%{opacity:1}50%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){.live i{animation:none}}
 .hd-s{font-size:11px;color:var(--muted);line-height:1.3;margin-top:1px;overflow-wrap:anywhere}
 
 /* タブ：必ず 52px 以上・5個が375pxに収まる */
@@ -56,7 +62,10 @@ button,input,select{font-family:inherit;font-size:inherit;color:inherit}
   cursor:pointer;white-space:nowrap
 }
 .tab .em{font-size:15px;line-height:1}
+.tab .ln{line-height:1.15;text-align:center}
 .tab.on{background:var(--bg);color:var(--accent)}
+.tab.hot{color:var(--gold);background:rgba(255,204,102,.13);box-shadow:inset 0 0 0 1px rgba(255,204,102,.35)}
+.tab.hot.on{background:var(--gold);color:#241a00;box-shadow:none;font-weight:800}
 
 /* ================= 共通パーツ ================= */
 .wrap{padding:12px 12px 40px;max-width:720px;margin:0 auto}
@@ -113,6 +122,31 @@ select{
 .gsec.f{color:var(--femaleText);border-bottom:2px solid var(--female);padding-bottom:5px}
 .gsec.x{color:var(--text);border-bottom:2px solid var(--male);border-image:linear-gradient(90deg,var(--male),var(--female)) 1;padding-bottom:5px}
 .gsec .n{margin-left:auto;font-size:12px;color:var(--dim);font-weight:600}
+.og{display:flex;align-items:baseline;gap:8px;margin:20px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--border)}
+.og .nm{font-size:15px;font-weight:800;color:var(--text)}
+.og .n{margin-left:auto;font-size:11px;color:var(--dim);font-weight:600}
+.orow{background:var(--card);border:1px solid var(--border2);border-radius:11px;
+  padding:10px 12px 10px 15px;margin-bottom:7px;position:relative;overflow:hidden}
+.orow::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--male)}
+.orow.f::before{background:var(--female)}
+.orow .to{font-size:17px;font-weight:800;color:var(--gold);letter-spacing:.2px;line-height:1.25}
+.orow .who{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:5px}
+.orow .who .nm{font-size:13.5px;font-weight:700}
+.orow .from{margin-top:5px;font-size:11.5px;color:var(--muted);line-height:1.5}
+.orow .ev{display:block;margin-top:3px;font-size:11.5px;color:var(--dim);line-height:1.5}
+.rlhd{padding:6px 0 2px;font-size:11.5px;font-weight:700;color:var(--accent)}
+.rlhd .dim{color:var(--dim);font-weight:400}
+.orow .ogev{display:inline-flex;align-items:center;gap:4px;margin:4px 6px 0 0;padding:5px 9px;
+  min-height:30px;border:1px solid var(--border);border-radius:999px;color:var(--text);
+  font-size:11.5px;cursor:pointer;background:var(--card2)}
+.orow .ogev .pill{margin:0}
+.orow .rlv{display:block;margin-top:5px;font-size:11.5px;line-height:1.55;color:var(--muted)}
+.orow .rlv b{color:var(--accent);font-weight:700}
+.orow .rlv .dim{color:var(--dim)}
+.ostat{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:12px}
+.ostat div{background:var(--card2);border:1px solid var(--border2);border-radius:10px;padding:8px 2px;text-align:center}
+.ostat b{display:block;font-size:22px;color:var(--gold);line-height:1.1}
+.ostat span{font-size:10.5px;color:var(--dim)}
 .tsec{display:flex;align-items:center;gap:7px;margin:14px 0 7px;font-size:12.5px;font-weight:700;
   color:var(--muted);padding:0 2px 4px;border-bottom:1px dashed var(--border2)}
 .tsec .n{margin-left:auto;font-size:11px;color:var(--dim);font-weight:600}
@@ -147,6 +181,21 @@ select{
 .pill.x{background:linear-gradient(90deg,var(--male),var(--female));color:#fff;border-color:transparent;font-weight:700}
 .pill.t{color:var(--gold);border-color:rgba(255,204,102,.35);font-weight:700;font-variant-numeric:tabular-nums}
 .pill.r{color:var(--muted);border-color:var(--border);font-weight:700}
+.pill.ov{color:var(--muted);border-color:var(--border);font-weight:700}
+.pill.ent{color:var(--accent);border-color:rgba(77,163,255,.4)}
+.pill.nr{background:linear-gradient(135deg,#ff6b2c,#ff3d3d);color:#fff;border-color:transparent;
+  font-weight:800;letter-spacing:.3px}
+.nrmk{display:inline-flex;align-items:center;gap:2px;margin-left:6px;padding:1px 7px;border-radius:999px;
+  background:linear-gradient(135deg,#ff6b2c,#ff3d3d);color:#fff;font-size:10.5px;font-weight:800;
+  vertical-align:middle;white-space:nowrap}
+.pill.rk{background:rgba(255,204,102,.16);color:var(--gold);border-color:transparent;font-weight:800}
+.pill.rk.m1{background:var(--gold);color:#241a00}
+.pill.rk.ng{background:rgba(140,155,185,.16);color:var(--muted)}
+.rkno{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:22px;
+  margin:0 6px 0 0;padding:0 5px;border-radius:7px;font-size:12px;font-weight:800;
+  background:rgba(255,204,102,.13);color:var(--gold)}
+.rkno.m1{background:var(--gold);color:#241a00}
+.rtime{color:var(--gold);font-weight:800;font-variant-numeric:tabular-nums}
 .pill.hl{background:var(--gold);color:#241a00;border-color:transparent;font-weight:700}
 .sw.hl{box-shadow:inset 0 0 0 1px rgba(255,204,102,.45)}
 .ln.hl{box-shadow:inset 0 0 0 1px rgba(255,204,102,.45)}
@@ -158,7 +207,7 @@ select{
 .ev{display:flex;align-items:center;gap:7px;padding:5px 0;font-size:12.5px;min-width:0}
 .ev .no{flex:0 0 auto;min-width:38px;font-size:10.5px;color:var(--dim)}
 .ev .nm{flex:1;min-width:0;overflow-wrap:anywhere}
-.ev .tm{flex:0 0 auto;color:var(--gold);font-weight:700;font-variant-numeric:tabular-nums}
+.ev .tm{flex:0 0 auto;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums}
 .ev .nm .pill{margin-left:6px}
 
 /* ================= プログラム行 ================= */
@@ -206,9 +255,45 @@ select{
 .ln.x .ln-no{background:linear-gradient(180deg,var(--male) 50%,var(--female) 50%);border-color:transparent;color:#fff}
 .ln-b{flex:1;min-width:0}
 .ln-nm{font-size:14px;font-weight:700;overflow-wrap:anywhere}
-.ln-tm{flex:0 0 auto;font-size:13px;font-weight:700;color:var(--gold);font-variant-numeric:tabular-nums}
+.ln-tm{flex:0 0 auto;font-size:13px;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
 
 .ft{margin-top:26px;padding-top:14px;border-top:1px solid var(--border2);color:var(--dim);font-size:11px;line-height:1.8;text-align:center}
+.res-btn{display:none;align-items:center;justify-content:center;gap:8px;min-height:48px;margin:10px 0 2px;
+  background:linear-gradient(135deg,#ffcc66,#ff9f43);color:#241800;font-weight:800;font-size:14.5px;
+  border-radius:12px;text-decoration:none;box-shadow:0 2px 10px rgba(255,159,67,.35)}
+.res-btn:active{filter:brightness(.95)}
+.pbar{display:none;align-items:center;gap:8px;width:100%;min-height:48px;margin:8px 0 2px;padding:6px 10px;
+  background:linear-gradient(135deg,#2a1c00,#3d2a00);border:1px solid rgba(255,204,102,.45);
+  border-radius:12px;color:var(--text);font-size:12px;text-align:left;cursor:pointer}
+.pbar.show{display:flex}
+.pbar .ttl{font-weight:800;color:var(--gold);white-space:nowrap}
+.pbar .mid{flex:1 1 0;min-width:0;line-height:1.35}
+.pbar .mid b{color:var(--gold)}
+.pbar .go{color:var(--gold);font-weight:800}
+.pt-seg{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px}
+.pt-seg button{min-height:48px;border-radius:11px;border:1px solid var(--border);background:var(--card2);
+  color:var(--muted);font-size:13.5px;font-weight:700}
+.pt-seg button.on{background:var(--male);color:#fff;border-color:transparent}
+.pt-seg button.on.f{background:var(--female)}
+.pt{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border2);
+  border-radius:11px;padding:9px 11px 9px 13px;margin-bottom:6px;position:relative;overflow:hidden}
+.pt::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--male)}
+.pt.f::before{background:var(--female)}
+.pt.hl{box-shadow:inset 0 0 0 1px rgba(255,204,102,.45)}
+.pt .rk{min-width:30px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:7px;
+  font-size:13px;font-weight:800;background:rgba(255,204,102,.13);color:var(--gold)}
+.pt .rk.m1{background:var(--gold);color:#241a00}
+.pt .rk.no{background:rgba(140,155,185,.14);color:var(--muted)}
+.pt .nm{flex:1 1 0;min-width:0;font-size:14px;font-weight:700;overflow-wrap:anywhere}
+.pt .nm .st{color:var(--gold);font-size:11px;margin-right:3px}
+.pt .pv{text-align:right;white-space:nowrap}
+.pt .pv b{display:block;font-size:16px;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums}
+.pt .pv span{font-size:10.5px;color:var(--dim)}
+.pt-gain{font-size:11px;color:var(--accent);margin:-2px 0 8px 13px}
+.pt-note{font-size:11.5px;color:var(--muted);line-height:1.6;background:var(--card2);
+  border-left:3px solid var(--gold);border-radius:8px;padding:9px 11px;margin-bottom:12px}
+.pt-note b{color:var(--gold)}
+.res-btn.show{display:flex}
 .ct{margin-top:8px;font-size:11px;color:var(--dim)}
 </style>
 </head>
@@ -222,6 +307,8 @@ select{
       <div class="hd-s" id="hdS"></div>
     </div>
   </div>
+  <a class="res-btn" id="resBtn" href="#">🏆 結果を見る</a>
+  <button class="pbar" id="pbar"></button>
   <nav class="tabs" id="tabs"></nav>
 </header>
 
@@ -260,6 +347,7 @@ const LANES = Array.isArray(META.lanes)
   : Array.from({length:META.lanes}, (_,i)=>META.laneStart+i);
 
 const PROGRAM  = DATA.program  || [];
+const PROG_BY_NO = new Map((DATA.program || []).map(p => [p.no, p]));
 const ENTRIES  = DATA.entries  || [];
 const RELAYS   = DATA.relays   || [];
 const SWIMMERS = DATA.swimmers || [];
@@ -309,6 +397,43 @@ const showTime = e => { const t=String(e.time||"").trim(); return (!t || /^(NT|�
 // 並び順の説明。タイムが無い大会は「組・レーン順（＝プログラム掲載順）」。
 const ordLabel = () => META.noTimes ? "組・レーン順" : "エントリータイム順";
 const tmTag = (e,tag,cls) => META.noTimes ? "" : `<${tag} class="${cls}">${esc(showTime(e))}</${tag}>`;
+
+/* ---------- 競技結果（entries[].result / relays[].result があるときだけ） ---------- */
+const MEDAL = {1:"🥇",2:"🥈",3:"🥉"};
+const rdOf = x => (PROG_BY_NO.get((x.programNos||[])[0]) || {}).round || "";
+const isFinalA = x => /^決勝$|^タイム決勝$/.test(rdOf(x));
+const isFinalB = x => /決勝/.test(rdOf(x)) && !isFinalA(x);
+// B決勝は決勝の下位。B決勝1位でも、決勝に8人いるので総合9位。
+const A_SIZE = new Map();
+(()=>{ for(const p of PROGRAM){
+    if(!/^決勝$|^タイム決勝$/.test(p.round||"")) continue;
+    const n = ENTRIES.filter(e => (e.programNos||[]).includes(p.no)).length
+            + RELAYS.filter(r => (r.programNos||[]).includes(p.no)).length;
+    A_SIZE.set([p.gender,p.distance,p.stroke].join("|"), n || 8);
+  } })();
+const overallRank = x => {
+  if(!isFinalB(x) || !x.result || !x.result.rank) return null;
+  const p = PROG_BY_NO.get((x.programNos||[])[0]) || {};
+  return x.result.rank + (A_SIZE.get([p.gender,p.distance,p.stroke].join("|")) ?? 8);
+};
+// メダルは決勝の1〜3位だけ。予選・B決勝には付けない。
+const medalOf = x => isFinalA(x) ? (MEDAL[x.result && x.result.rank] || "") : "";
+const ovPill  = x => { const n = overallRank(x); return n ? `<span class="pill ov">総合${n}位</span>` : ""; };
+const hasRes  = l => l.some(e => e && e.result);
+const resSec  = e => { const t=e.result&&e.result.time; if(!t) return Infinity;
+  const m=t.match(/^(?:(\d+):)?(\d+)\.(\d+)$/); return m?(+(m[1]||0))*60+(+m[2])+(+("0."+m[3])):Infinity; };
+const resKey  = e => e.result ? (e.result.rank || 9998) : 9999;
+// 順位バッジ（1〜3位は色を変える）。棄権・失格は記録の代わりにその文字を出す。
+// 新記録の印。★＋語（大会新・学生新…）。メダルは順位のものなので形も色も変える。
+const recMk = e => (e.result && e.result.rec) ? `<span class="nrmk">★${esc(e.result.rec)}</span>` : "";
+function resPill(e){
+  const r = e.result; if(!r) return "";
+  if(r.note) return `<span class="pill rk ng">${esc(r.note)}</span>`;
+  const md = medalOf(e);
+  return (r.rank ? `<span class="pill rk${r.rank===1&&isFinalA(e)?" m1":""}">${md}${r.rank}位</span>${ovPill(e)}` : "")
+       + (r.time ? `<span class="rtime" style="margin-left:6px">${esc(r.time)}</span>` : "")
+       + recMk(e);
+}
 
 /* ---------- 標準記録の突破判定（program[].standard があるときだけ） ---------- */
 const PG_BY_NO = new Map(PROGRAM.map(p => [p.no, p]));
@@ -369,7 +494,8 @@ const KEY = e => e.id || (nx(e.name) + "@" + nx(e.team));
 const SW  = new Map();
 for(const s of SWIMMERS){
   SW.set(s.id || (nx(s.name)+"@"+nx(s.team)),
-        {id:s.id, name:s.name, kana:s.kana, team:s.team, grade:s.grade, gender:s.gender, evs:[]});
+        {id:s.id, name:s.name, kana:s.kana, team:s.team, grade:s.grade, gender:s.gender,
+         origin:s.origin, originDetail:s.originDetail, evs:[]});
 }
 for(const e of ENTRIES){
   const k = KEY(e);
@@ -412,8 +538,12 @@ const EVENTS = (()=>{
   for(const e of ENTRIES){
     if(e.entryType === "リレーのみ") continue;
     const ev = e.event || ((e.distance||"") + " " + (e.stroke||"")).trim();
-    const k  = glabel(e.gender) + " " + ev;
-    if(!m.has(k)) m.set(k, {key:k, gender:e.gender, event:ev, list:[]});
+    // 予選・B決勝・決勝は別のレース。競技No.ごとに分ける
+    // （まとめると No.9〜20 のような決勝が一覧から消える。2026-09-03に実害）
+    const no = e.programNos?.[0];
+    const rd = (PROG_BY_NO.get(no)||{}).round || "";
+    const k  = glabel(e.gender) + " " + ev + (rd && rd !== "予選" ? " " + rd : "");
+    if(!m.has(k)) m.set(k, {key:k, gender:e.gender, event:ev, round:rd, list:[]});
     m.get(k).list.push(e);
   }
   for(const g of m.values()){
@@ -440,6 +570,7 @@ const RACES = (()=>{
   }
   return [...m.values()];
 })();
+const EV_BY_NO = new Map();
 const RACE_BY_NO = new Map();
 for(const r of RACES) for(const no of r.nos) RACE_BY_NO.set(no, r);
 const raceEvent = r => ((r.distance||"")+" "+(r.stroke||"")).trim();
@@ -496,30 +627,75 @@ const TABS = [
   {id:"ev", em:"🏊", nm:"種目"},
   {id:"pg", em:"📋", nm:"日程"},
   {id:"rl", em:"🔄", nm:"リレー"},
-  {id:"ln", em:"🏁", nm:"組・レーン"},
-  {id:"in", em:"ℹ️", nm:"大会情報"}
+  {id:"ln", em:"🏁", nm:"組・|レーン"},
+  {id:"og", em:"🎓", nm:"出身"},
+  {id:"in", em:"ℹ️", nm:"大会|情報"}
 ];
-const ST = {tab:"sw", q:"", gender:"all", hl:false, ev:0, day:"all", pgNo:null, raceKey:null, open:new Set()};
+/* ---------- 出身タブ（meta.originTab と swimmers[].origin があるときだけ） ---------- */
+const OG      = META.originTab || null;
+const OGLIST  = SWL.filter(s => s.origin);
+const ORIGIN_OK = !!(OG && OGLIST.length);
 
-document.getElementById("hdT").textContent = META.title;
+/* 出身タブに載る選手（県外の大学に進んだ鹿児島の選手）は、チーム名では拾えない。
+   選手キーで見て、応援チームと同じ⭐を付ける。名簿の中で目が止まるようにするための印。 */
+const OGKEY  = new Set(OGLIST.map(s => KEY(s)));
+const mkTeam = x => (x && (x.team || x.name)) || "";
+const isOgSw = x => !!(x && x.name && !x.isRelay && OGKEY.has(KEY(x)));
+const isMk   = x => !!x && (isHL(mkTeam(x)) || isOgSw(x));
+const mkPill = x => isMk(x) ? `<span class="pill hl">⭐ ${esc(META.highlightLabel||"注目")}</span>` : "";
+if(OG && OG.nm) TABS.find(t => t.id === "og").nm = OG.nm;
+if(OG && OG.em) TABS.find(t => t.id === "og").em = OG.em;
+if(OG && OG.accent) TABS.find(t => t.id === "og").hot = true;   // 色で目立たせる
+
+const ST = {tab:"sw", ptG:0, pt:false, q:"", gender:"all", hl:false, ev:0, day:"all", pgNo:null, raceKey:null, open:new Set()};
+
+const LIVE = ENTRIES.some(e => e.result) || RELAYS.some(r => r.result);
+document.getElementById("hdT").innerHTML = esc(META.title)
+  + (LIVE ? `<span class="live"><i></i>${esc(META.liveLabel || "速報中")}</span>` : "");
 document.getElementById("hdS").textContent = META.subtitle;
+// 学校対抗のバナー（全タブ共通・ヘッダー直下）。タブを増やさずに1タップで得点画面へ。
+const pbarEl = document.getElementById("pbar");
+function drawPbar(){
+  if(!TP || !TP.genders || !TP.genders.length) return;
+  const head = TP.genders.map(g => {
+    const t = g.teams[0];
+    return t && t.points ? `${gmark(g.gender)} ${esc(t.team)} <b>${String(t.points).replace(/\.0$/,"")}</b>` : "";
+  }).filter(Boolean).join(" ／ ");
+  pbarEl.innerHTML = `<span class="ttl">🏆 学校対抗</span>`
+    + `<span class="mid">${head || "まだ得点は出ていません"}</span>`
+    + `<span class="go">${ST.pt ? "×" : "›"}</span>`;
+  pbarEl.classList.add("show");
+}
+pbarEl.onclick = () => { ST.pt = !ST.pt; render(); };
+
+const resBtn = document.getElementById("resBtn");
+if(META.resultsUrl){
+  resBtn.href = META.resultsUrl;
+  resBtn.classList.add("show");
+  resBtn.textContent = "🏆 " + (META.resultsLabel || "結果を見る") + " →";
+}
 
 const tabsEl = document.getElementById("tabs");
 tabsEl.innerHTML = TABS
   .filter(t => t.id !== "ln" || META.lanePrediction)
   .filter(t => t.id !== "rl" || RELAYS.length)
+  .filter(t => t.id !== "og" || ORIGIN_OK)
   .filter(t => t.id !== "in" || (META.info||[]).length)
-  .map(t => `<button class="tab" data-t="${t.id}"><span class="em">${t.em}</span>${t.nm}</button>`).join("");
+  .map(t => `<button class="tab${t.hot?" hot":""}" data-t="${t.id}"><span class="em">${t.em}</span>`
+          + `<span class="ln">${String(t.nm).split("|").map(esc).join("<br>")}</span>`
+          + `</button>`).join("");
 tabsEl.onclick = ev => {
   const b = ev.target.closest(".tab"); if(!b) return;
-  ST.tab = b.dataset.t; render();
+  ST.tab = b.dataset.t; ST.pt = false; render();
 };
 
 const M = document.getElementById("main");
 
 function render(){
-  [...tabsEl.children].forEach(b => b.classList.toggle("on", b.dataset.t === ST.tab));
-  M.innerHTML = ({sw:viewSw, ev:viewEv, pg:viewPg, rl:viewRl, ln:viewLn, in:viewInfo})[ST.tab]();
+  [...tabsEl.children].forEach(b => b.classList.toggle("on", !ST.pt && b.dataset.t === ST.tab));
+  M.innerHTML = ST.pt ? viewPoints()
+    : ({sw:viewSw, ev:viewEv, pg:viewPg, rl:viewRl, ln:viewLn, og:viewOg, in:viewInfo})[ST.tab]();
+  drawPbar();
   bind();
   window.scrollTo(0,0);
 }
@@ -529,17 +705,30 @@ function swCard(s, i, noTeamPill){
   const g = gcls(s.gender);
   const kn = (META.showKana && s.kana) ? `<span class="sw-kn">${esc(s.kana)}</span>` : "";
   const open = ST.open.has(KEY(s.evs[0]||s)) ? " open" : "";
-  const evs = s.evs.map(e => `<div class="ev">
+  // 種目行タップで組・レーンへジャンプ（そのレースが RACE_BY_NO にあるときだけ）
+  const jn = e => (META.lanePrediction!==false && e.programNos?.length) ? ` data-jn="${e.programNos[0]}" style="cursor:pointer"` : "";
+  // 申込タイムが無い大会は、代わりに日程表の開始予定時刻を出す（何時に招集所へ行くかが本題なので）
+  const stm = e => { const p = PG_BY_NO.get(e.programNos?.[0]);
+    return p && p.startTime ? `<span class="tm" style="color:var(--gold)">${esc(p.startTime)}</span>` : ""; };
+  const evRow = e => `<div class="ev"${jn(e)}>
       <span class="no">${e.programNos?.length ? "No."+e.programNos.join("/") : ""}</span>
       <span class="nm">${esc(e.event || ((e.distance||"")+" "+(e.stroke||"")))}${tags(e)}</span>
-      ${tmTag(e,"span","tm")}</div>`).join("");
-  return `<div class="sw ${g}${open}${isHL(s.team)?" hl":""}" data-k="${esc(KEY(s.evs[0]||s))}">
+      ${e.result ? `<span class="tm">${resPill(e)}</span>` : (tmTag(e,"span","tm") || stm(e))}</div>`;
+  // 個人種目が無い選手＝リレーで出場する選手。何も出さないと「情報が抜けている」と読まれるので、
+  // 所属校が申し込んだリレー種目を出す（泳者4名と泳順は当日決まる）。
+  const rl = s.evs.length ? [] : RELAYS.filter(r => r.team === s.team && isF(r.gender) === isF(s.gender))
+                                       .sort((a,b) => (a.programNos?.[0]||999) - (b.programNos?.[0]||999));
+  const evs = s.evs.length
+    ? s.evs.map(evRow).join("")
+    : (rl.length ? `<div class="rlhd">🏊 リレーで出場 <span class="dim">（泳者は当日発表）</span></div>`
+                 + rl.map(evRow).join("") : "");
+  return `<div class="sw ${g}${open}${isMk(s)?" hl":""}" data-k="${esc(KEY(s.evs[0]||s))}">
     <div class="sw-r1">
       <span class="sw-nm">${esc(s.name)}</span>${kn}
-      ${s.evs.length ? `<span class="sw-bd">${s.evs.length}種目</span>` : `<span class="sw-bd">リレーのみ</span>`}
+      ${s.evs.length ? `<span class="sw-bd">${s.evs.length}種目</span>` : `<span class="sw-bd">リレー</span>`}
     </div>
     <div class="sw-r2">
-      <span class="sw-tm">${esc(s.team)}</span>${noTeamPill ? "" : hlPill(s.team)}
+      <span class="sw-tm">${esc(s.team)}</span>${noTeamPill ? "" : mkPill(s)}
       ${s.grade ? `<span class="pill">${esc(shortGrade(s.grade))}</span>` : ""}
       <span class="pill ${g}">${isF(s.gender)?"女子":"男子"}</span>
     </div>
@@ -569,6 +758,43 @@ function genderBlocks(list, sortFn){
   return h;
 }
 
+EVENTS.forEach((e,i) => EV_BY_NO.set(e.no, i));
+
+/* ---------- 学校対抗得点（data.teamPoints があるときだけ） ---------- */
+const TP = DATA.teamPoints || null;
+const tpG = () => (TP && TP.genders && TP.genders[ST.ptG]) || null;
+
+function viewPoints(){
+  const g = tpG(); if(!g) return "";
+  const segs = TP.genders.map((x,i)=>
+    `<button data-ptg="${i}" class="${i===ST.ptG?"on":""}${isF(x.gender)?" f":""}">${gmark(x.gender)}</button>`).join("");
+  const inRace = g.teams.filter(t => t.rank);       // 学校対抗の対象校（団体出場校・シード校）
+  const outRace = g.teams.filter(t => !t.rank);     // 個人出場校＝得点しても対象外
+  const top = inRace[0] ? inRace[0].points : 0;
+  const row = t => {
+    const last = t.gains.length ? t.gains[t.gains.length-1] : null;
+    const diff = t.rank === 1 || !t.points ? "" : `<span>${(t.points-top).toFixed(1).replace(/\.0$/,"")}</span>`;
+    return `<div class="pt ${isF(g.gender)?"f":"m"}${isHL(t.team)?" hl":""}">
+        <span class="rk${t.rank===1?" m1":""}${t.rank?"":" no"}">${t.rank || "-"}</span>
+        <span class="nm">${t.seed?`<span class="st">★</span>`:""}${esc(t.team)}${hlPill(t.team)}</span>
+        <span class="pv"><b>${String(t.points).replace(/\.0$/,"")}</b>${diff}</span>
+      </div>` + (last && last.gain ? `<div class="pt-gain">${esc(last.ev)} で +${String(last.gain).replace(/\.0$/,"")}</div>` : "");
+  };
+  const rows = inRace.map(row).join("")
+    + (outRace.length ? `<div class="gsec" style="margin-top:18px">学校対抗の対象外<span class="n">${outRace.length}校</span></div>`
+        + `<div class="pt-note" style="margin-bottom:8px">団体出場校ではないため、得点しても学校対抗の順位には入りません。</div>`
+        + outRace.map(row).join("") : "");
+  const rest = g.events.length - g.eventsDone;
+  return `<div class="pt-seg">${segs}</div>
+    <div class="count">🏆 <b>${g.eventsDone}</b>/${g.events.length}種目 終了</div>
+    <div class="pt-note">入賞（8位以内）した学校だけに点が入ります。
+      <b>リレーは個人の2倍</b>（決勝1位 40点／個人は20点）。
+      ${rest>0?`残り<b>${rest}種目</b>あるので、まだ大きく動きます。`:"全種目が終わりました。"}<br>
+      ★は<b>シード校</b>（前年度8位以内）。順位が付くのは<b>シード校と団体出場校</b>だけです。</div>
+    ${rows}
+    ${TP.note?`<div class="note" style="margin-top:14px">${md(TP.note)}</div>`:""}`;
+}
+
 /* ---------- タブ1：選手・チーム ---------- */
 function viewSw(){
   const c = S.counts || {};
@@ -582,7 +808,7 @@ function viewSw(){
 
   const q = nx(ST.q), qk = nk(ST.q);
   let list = SWL;
-  if(ST.hl) list = list.filter(s => isHL(s.team));
+  if(ST.hl) list = list.filter(s => isMk(s));
   if(ST.gender !== "all") list = list.filter(s => (ST.gender==="f") === isF(s.gender));
   if(q) list = list.filter(s => s._n.includes(q) || s._t.includes(q) || (qk && s._k.includes(qk)));
 
@@ -603,10 +829,10 @@ function viewSw(){
       <button data-g="f" class="${ST.gender==="f"?"on f":""}">🔴 女子</button>
     </div>
     <div class="field">
-      <input id="q" type="text" value="${esc(ST.q)}" placeholder="名前・ひらがな・チーム名で検索">
+      <input id="q" type="text" value="${esc(ST.q)}" placeholder="名前・ひらがな・チーム名で検索" aria-label="選手名・ひらがな・チーム名で検索">
       <button id="qc">クリア</button>
     </div>
-    <div class="chips">${HLSET.size?`<button class="hl${ST.hl?" on":""}" data-hl="1">⭐ ${esc(META.highlightLabel||"注目")} ${SWL.filter(s=>isHL(s.team)).length}名</button>`:""}${TEAMS.slice(0,25).map(t=>`<button data-tm="${esc(t[0])}">${esc(t[0])} ${t[1]}</button>`).join("")}</div>
+    <div class="chips">${HLSET.size?`<button class="hl${ST.hl?" on":""}" data-hl="1">⭐ ${esc(META.highlightLabel||"注目")} ${SWL.filter(s=>isMk(s)).length}名</button>`:""}${TEAMS.slice(0,25).map(t=>`<button data-tm="${esc(t[0])}">${esc(t[0])} ${t[1]}</button>`).join("")}</div>
     ${body}`;
 }
 
@@ -615,21 +841,32 @@ function viewEv(){
   const g = EVENTS[ST.ev];
   const opts = EVENTS.map((e,i)=>`<option value="${i}" ${i===ST.ev?"selected":""}>No.${e.no} ${esc(e.key)}（${e.list.length}名）</option>`).join("");
   if(!g) return `<div class="empty"><span class="e">🏊</span>種目データがありません</div>`;
-  const rows = g.list.map((e,i)=>`<div class="sw ${gcls(e.gender)}${isHL(e.team)?" hl":""}">
+  const done = hasRes(g.list);
+  const list = done ? [...g.list].sort((a,b)=> resKey(a)-resKey(b) || resSec(a)-resSec(b)) : g.list;
+  const rows = list.map((e,i)=>`<div class="sw ${gcls(e.gender)}${isMk(e)?" hl":""}">
       <div class="sw-r1">
-        <span class="sw-bd" style="margin:0 6px 0 0;background:rgba(255,204,102,.13);color:var(--gold)">${i+1}</span>
+        ${done
+          ? (e.result && e.result.rank
+              ? `<span class="rkno${e.result.rank===1&&isFinalA(e)?" m1":""}">${medalOf(e)||e.result.rank}</span>`
+              : `<span class="rkno" style="background:rgba(140,155,185,.14);color:var(--muted)">-</span>`)
+          : `<span class="sw-bd" style="margin:0 6px 0 0;background:rgba(255,204,102,.13);color:var(--gold)">${i+1}</span>`}
         <span class="sw-nm">${esc(e.name)}</span>
-        ${tmTag(e,"span","sw-bd")}
+        ${done
+          ? (e.result && e.result.note ? `<span class="sw-bd">${esc(e.result.note)}</span>`
+             : e.result && e.result.time ? `<span class="sw-bd" style="color:var(--gold)">${esc(e.result.time)}</span>${recMk(e)}` : "")
+          : tmTag(e,"span","sw-bd")}
       </div>
       <div class="sw-r2">
-        <span class="sw-tm">${esc(e.team)}</span>${hlPill(e.team)}
+        <span class="sw-tm">${esc(e.team)}</span>${mkPill(e)}
         ${e.grade?`<span class="pill">${esc(shortGrade(e.grade))}</span>`:""}
         <span class="pill ${gcls(e.gender)}">${isF(e.gender)?"女子":"男子"}</span>
+        ${ovPill(e)}
+        ${done && e.time ? `<span class="pill ent">申込 ${esc(e.time)}</span>` : ""}
         ${tags(e)}
       </div></div>`).join("");
-  return `<select id="evSel">${opts}</select>
+  return `<select id="evSel" aria-label="種目を選択">${opts}</select>
     ${stdHead(g.list)}
-    <div class="count">${ordLabel()}・<b>${g.list.length}</b>名</div>${rows}`;
+    <div class="count">${done ? "🏁 結果・<b>"+g.list.length+"</b>名" : ordLabel()+"・<b>"+g.list.length+"</b>名"}</div>${rows}`;
 }
 
 /* ---------- タブ3：日程（プログラム） ---------- */
@@ -644,10 +881,13 @@ function viewPg(){
 
   if(ST.pgNo != null){
     const p = PROGRAM.find(x => x.no === ST.pgNo);
-    const list = ENTRIES.filter(e => (e.programNos||[]).includes(ST.pgNo))
+    const list0 = ENTRIES.filter(e => (e.programNos||[]).includes(ST.pgNo))
       .concat(RELAYS.filter(r => (r.programNos||[]).includes(ST.pgNo))
                     .map(r => Object.assign({}, r, {name:r.team, team:"", isRelay:true})))
       .sort((a,b)=> secOf(a)-secOf(b));
+    // 結果が出たら順位順に並べ替える（申込タイム順のままだと1位が真ん中に来て読めない）
+    const done = hasRes(list0);
+    const list = done ? [...list0].sort((a,b)=> resKey(a)-resKey(b) || resSec(a)-resSec(b)) : list0;
     const unit = list.length && list.every(e => e.isRelay) ? "チーム" : "名";
     const rc = RACE_BY_NO.get(ST.pgNo);
     const together = (rc && rc.nos.length > 1)
@@ -660,12 +900,16 @@ function viewPg(){
       ${META.lanePrediction ? `<button class="tab" id="toLn" style="min-height:48px;width:100%;background:var(--card2);border-radius:11px;border:1px solid var(--border);color:var(--accent);margin-bottom:10px">🏁 この種目の組・レーンを見る</button>` : ""}
       ${p&&p.note?`<div class="note">${md(p.note)}</div>`:""}
       ${stdHead(list)}
-      ${list.length?`<div class="count">${ordLabel()}・<b>${list.length}</b>${unit}</div>`:""}
-      ${list.map(e=>`<div class="sw ${gcls(e.gender)}${isHL(e.team||e.name)?" hl":""}">
-        <div class="sw-r1"><span class="sw-nm">${esc(e.name)}</span>${tmTag(e,"span","sw-bd")}</div>
-        <div class="sw-r2">${e.team?`<span class="sw-tm">${esc(e.team)}</span>`:""}${hlPill(e.team||e.name)}
+      ${list.length?`<div class="count">${done ? "🏁 結果" : ordLabel()}・<b>${list.length}</b>${unit}</div>`:""}
+      ${list.map(e=>`<div class="sw ${gcls(e.gender)}${isMk(e)?" hl":""}">
+        <div class="sw-r1"><span class="sw-nm">${esc(e.name)}</span>${
+          e.result ? `<span class="sw-bd" style="color:var(--gold)">${esc(e.result.time || e.result.note || "")}</span>${recMk(e)}`
+                   : tmTag(e,"span","sw-bd")}</div>
+        <div class="sw-r2">${e.team?`<span class="sw-tm">${esc(e.team)}</span>`:""}${mkPill(e)}
           ${e.grade?`<span class="pill">${esc(shortGrade(e.grade))}</span>`:""}
           <span class="pill ${gcls(e.gender)}">${isF(e.gender)?"女子":"男子"}</span>
+          ${e.result&&e.result.rank?`<span class="pill rk${e.result.rank===1&&isFinalA(e)?" m1":""}">${medalOf(e)}${e.result.rank}位</span>${ovPill(e)}`:""}
+          ${e.result&&e.time?`<span class="pill ent">申込 ${esc(e.time)}</span>`:""}
           ${e.isRelay&&e.members?.length?`<span class="sw-tm">${esc(e.members.join("・"))}</span>`:""}
           ${tags(e)}</div></div>`).join("")}`;
   }
@@ -677,7 +921,9 @@ function viewPg(){
     const n = cnt(p.no); if(!n) return "";
     const h = Math.ceil(n / LANES.length);
     if(!p.heats) return `・${h}組（予想）`;
-    return p.heats === h ? `・${h}組` : `・${h}組（予想）／日程表の記載は${p.heats}組`;
+    // 公式の組数が分かっている場合は必ずそれを主表示にする。申込数からの計算値は
+    // 食い違うときだけ参考値として添える（公式より予想を前面に出さない）。
+    return p.heats === h ? `・${h}組` : `・${p.heats}組（申込${n}件からの参考値は${h}組）`;
   };
   return segs + pg.map(p=>`<div class="pg ${gcls(p.gender)}" data-no="${p.no}">
       <div class="pg-r">
@@ -704,18 +950,27 @@ function viewRl(){
     m.get(k).push(r);
   }
   let h = "";
-  for(const [k, list] of m){
-    list.sort((a,b)=> ordKey(a)-ordKey(b));
+  for(const [k, list0] of m){
+    const done = hasRes(list0);
+    const list = done ? [...list0].sort((a,b)=> resKey(a)-resKey(b) || resSec(a)-resSec(b))
+                      : [...list0].sort((a,b)=> ordKey(a)-ordKey(b));
     const g = k.startsWith("女子") ? "f" : k.startsWith("混合") ? "x" : "m";
-    h += `<div class="gsec ${g}">${k}<span class="n">${list.length}チーム</span></div>`;
+    h += `<div class="gsec ${g}">${k}<span class="n">${done?"🏁 結果・":""}${list.length}チーム</span></div>`;
     h += list.map((r,i)=>`<div class="sw ${g}${isHL(r.team)?" hl":""}">
       <div class="sw-r1">
-        <span class="sw-bd" style="margin:0 6px 0 0;background:rgba(255,204,102,.13);color:var(--gold)">${i+1}</span>
+        ${done
+          ? (r.result && r.result.rank
+              ? `<span class="rkno${r.result.rank===1&&isFinalA(r)?" m1":""}">${medalOf(r)||r.result.rank}</span>`
+              : `<span class="rkno" style="background:rgba(140,155,185,.14);color:var(--muted)">-</span>`)
+          : `<span class="sw-bd" style="margin:0 6px 0 0;background:rgba(255,204,102,.13);color:var(--gold)">${i+1}</span>`}
         <span class="sw-nm">${esc(r.team)}</span>${hlPill(r.team)}
         ${r.grade?`<span class="pill">${esc(shortGrade(r.grade))}</span>`:""}
         ${hitStd(r)?`<span class="pill t">★突破</span>`:""}
         ${r.note?`<span class="pill">${esc(r.note)}</span>`:""}
-        ${tmTag(r,"span","sw-bd")}
+        ${done
+          ? (r.result && r.result.note ? `<span class="sw-bd">${esc(r.result.note)}</span>`
+             : r.result && r.result.time ? `<span class="sw-bd" style="color:var(--gold)">${esc(r.result.time)}</span>${recMk(r)}` : "")
+          : tmTag(r,"span","sw-bd")}
       </div>
       ${r.members?.length ? `<div class="sw-r2"><span class="sw-tm">${esc(r.members.join("・"))}</span></div>` : ""}
     </div>`).join("");
@@ -732,7 +987,9 @@ function rcHead(r){
     <span class="n">${t0?"予定 "+esc(t0)+" ／ ":""}${esc(r.day||"")} ${esc(r.round||"")}${r.label?" ／ "+esc(r.label):""}</span></div>`;
 }
 function viewLn(){
-  const opts = RACES.map(r=>`<option value="${esc(r.key)}" ${ST.raceKey===r.key?"selected":""}>No.${r.nos.join("・")} ${esc(r.day||"")} ${r.mixGender?"男女":glabel(r.gender)} ${esc(raceEvent(r))}${r.label?" "+esc(r.label):""}</option>`).join("");
+  // 出場者が決まっていないレース（予選の結果待ちの決勝など）は選択肢に出さない
+  const shown = RACES.filter(r => raceList(r).length);
+  const opts = shown.map(r=>`<option value="${esc(r.key)}" ${ST.raceKey===r.key?"selected":""}>No.${r.nos.join("・")} ${esc(r.day||"")} ${r.mixGender?"男女":glabel(r.gender)} ${esc(raceEvent(r))}${r.label?" "+esc(r.label):""}</option>`).join("");
   const head = `<select id="lnSel"><option value="">— レースを選んでください —</option>${opts}</select>`;
 
   const r = ST.raceKey == null ? null : RACES.find(x => x.key === ST.raceKey);
@@ -770,13 +1027,15 @@ function viewLn(){
       ${LANES.map(l=>{
         const e = h.seat.get(l);
         if(!e) return `<div class="ln empty-ln"><div class="ln-no">${l}</div><div class="ln-b"><div class="ln-nm">（空き）</div></div></div>`;
-        return `<div class="ln ${gcls(e.gender)}${isHL(e.team)?" hl":""}">
+        return `<div class="ln ${gcls(e.gender)}${isMk(e)?" hl":""}">
           <div class="ln-no">${l}</div>
           <div class="ln-b">
             <div class="ln-nm">${esc(e.name)}</div>
-            <div class="sw-r2">${e.team?`<span class="sw-tm">${esc(e.team)}</span>`:""}${hlPill(e.team)}${e.grade?`<span class="pill">${esc(shortGrade(e.grade))}</span>`:""}${hitStd(e)?`<span class="pill t">★</span>`:""}</div>
+            <div class="sw-r2">${e.team?`<span class="sw-tm">${esc(e.team)}</span>`:""}${mkPill(e)}${e.grade?`<span class="pill">${esc(shortGrade(e.grade))}</span>`:""}${hitStd(e)?`<span class="pill t">★</span>`:""}</div>
           </div>
-          ${tmTag(e,"div","ln-tm")}</div>`;
+          ${e.result ? `<div class="ln-tm" style="color:var(--gold)">${esc(e.result.time || e.result.note || "")}${
+              e.result.rank?` <span class="pill rk${e.result.rank===1&&isFinalA(e)?" m1":""}">${medalOf(e)}${e.result.rank}位</span>${ovPill(e)}`:""}${recMk(e)}</div>`
+            : tmTag(e,"div","ln-tm")}</div>`;
       }).join("")}
     </div>`).join("");
 
@@ -785,6 +1044,50 @@ function viewLn(){
 }
 
 /* ---------- タブ6：大会情報（meta.info があるときだけ） ---------- */
+/* 出身校ごとにまとめ、行の主役は進んだ先（チーム名）にする。
+   「どこから、どこへ行けるか」を見せるための画面。 */
+function viewOg(){
+  const by = new Map();
+  for(const s of OGLIST){ if(!by.has(s.origin)) by.set(s.origin, []); by.get(s.origin).push(s); }
+  const groups = [...by.entries()].sort((a,b) => b[1].length - a[1].length || a[0].localeCompare(b[0],"ja"));
+  const teams  = new Set(OGLIST.map(s => s.team));
+  let h = `<div class="ostat">
+      <div><b>${OGLIST.length}</b><span>${esc(OG.unitLabel||"人")}</span></div>
+      <div><b>${teams.size}</b><span>${esc(OG.toLabel||"進んだ先")}</span></div>
+      <div><b>${groups.length}</b><span>${esc(OG.fromLabel||"出身校")}</span></div>
+    </div>`;
+  if(OG.lead) h += `<div class="note">${md(OG.lead)}</div>`;
+  for(const [name, list] of groups){
+    const us = new Set(list.map(s => s.team));
+    h += `<div class="og"><span class="nm">${esc(name)}</span>
+      <span class="n">${list.length}${esc(OG.unitLabel||"人")} → ${us.size}${esc(OG.toShort||"大学")}</span></div>`;
+    list.sort((a,b) => gradeNum(a.grade)-gradeNum(b.grade) || a.name.localeCompare(b.name,"ja"));
+    for(const s of list){
+      const evs = (s.evs||[]).map(e => {
+        const no = (e.programNos||[])[0];
+        const nm = `${esc(e.distance||"")}${esc(e.stroke||"")}`;
+        return `<a class="ogev"${no!=null?` data-jev="${no}"`:""}>${nm}${e.result?` ${resPill(e)}`:""}</a>`;
+      }).filter(Boolean);
+      // 個人種目が無い選手＝リレーで出場する選手。空欄にすると「情報が抜けている」と読まれるので必ず書く。
+      const rl = evs.length ? [] : RELAYS
+        .filter(r => r.team === s.team && isF(r.gender) === isF(s.gender))
+        .sort((a,b) => (a.programNos?.[0]||999) - (b.programNos?.[0]||999))
+        .map(r => `${esc(r.distance||"")}${esc(r.stroke||"")}`);
+      h += `<div class="orow ${gcls(s.gender)}">
+        <div class="to">${esc(s.team)}</div>
+        <div class="who"><span class="nm">${esc(s.name)}</span>
+          ${s.grade?`<span class="pill">${esc(shortGrade(s.grade))}</span>`:""}
+          <span class="pill ${gcls(s.gender)}">${isF(s.gender)?"女子":"男子"}</span></div>
+        ${s.originDetail?`<div class="from">🏫 ${esc(s.originDetail)}</div>`:""}
+        ${evs.length?`<div class="ev">${evs.join("")}</div>`:""}
+        ${rl.length?`<div class="rlv"><b>🏊 リレーで出場</b> <span class="dim">（泳者は当日発表）</span><br>${rl.join("／")}</div>`:""}
+      </div>`;
+    }
+  }
+  if(OG.note) h += `<div class="note" style="margin-top:16px">${md(OG.note)}</div>`;
+  return h;
+}
+
 function viewInfo(){
   return (META.info||[]).map(b => `<div class="ib">
     <h3>${esc(b.title||"")}</h3>
@@ -816,6 +1119,18 @@ function bind(){
     if(ST.open.has(k)) ST.open.delete(k); else ST.open.add(k);
     c.classList.toggle("open");
   });
+  // 出身タブなどから「その種目」へ飛ぶ
+  M.querySelectorAll("[data-ptg]").forEach(b => b.onclick = () => { ST.ptG = +b.dataset.ptg; render(); });
+  M.querySelectorAll("[data-jev]").forEach(b => b.onclick = ev => {
+    ev.stopPropagation();
+    const i = EV_BY_NO.get(+b.dataset.jev);
+    if(i != null){ ST.ev = i; ST.tab = "ev"; render(); }
+  });
+  M.querySelectorAll("[data-jn]").forEach(b => b.onclick = ev => {
+    ev.stopPropagation();
+    const r = RACE_BY_NO.get(+b.dataset.jn);
+    if(r){ ST.raceKey = r.key; ST.tab = "ln"; render(); }
+  });
   const back = M.querySelector("#back"); if(back) back.onclick = () => { ST.pgNo = null; render(); };
   const toLn = M.querySelector("#toLn"); if(toLn) toLn.onclick = () => {
     const r = RACE_BY_NO.get(ST.pgNo); ST.raceKey = r ? r.key : null; ST.tab = "ln"; render(); };
@@ -832,7 +1147,9 @@ function redrawKeepFocus(pos){
 function footer(){
   const f = document.createElement("div");
   f.className = "ft";
-  f.innerHTML = "非公式のページです。転載はご遠慮ください。<br>" +
+  f.innerHTML = esc(META.disclaimer || "非公式のページです。正式な内容は大会の公式発表をご確認ください。")
+                + "<br>転載はご遠慮ください。<br>" +
+                (META.resultsUrl ? `結果: <a href="${esc(META.resultsUrl)}" style="color:var(--accent)">こちら</a><br>` : "") +
                 (META.source ? esc(META.source) + "<br>" : "") +
                 "© " + new Date().getFullYear() + " gyojin600m1" +
                 '<div class="ct" id="ct"></div>';
